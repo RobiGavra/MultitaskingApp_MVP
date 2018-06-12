@@ -1,0 +1,115 @@
+﻿<Window x:Class="Proiect.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proiect"
+        mc:Ignorable="d"
+        Title="Menu" Height="396.976" Width="275.147">
+    <Window.Resources>
+        <Style x:Key="Trigger1">
+            <Style.Setters>
+                <Setter Property="Control.FontFamily" Value="Commic"/>
+                <Setter Property="Control.FontSize" Value="17" />
+                <Setter Property="Control.FontWeight" Value="Regular" />
+            </Style.Setters>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                Duration="0:0:0.2"
+                                Storyboard.TargetProperty="FontSize"
+                                To="26"  />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                 Duration="0:0:1"
+                                 Storyboard.TargetProperty="FontSize"  />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="Trigger2">
+            <Style.Setters>
+                <Setter Property="Control.FontFamily" Value="Times New Roman" />
+                <Setter Property="Control.FontSize" Value="18" />
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="Control.IsFocused" Value="True">
+                    <Setter Property="Control.Foreground" Value="DarkRed" />
+                </Trigger>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Foreground" Value="LightYellow" />
+                    <Setter Property="Control.FontWeight" Value="Bold" />
+                </Trigger>
+                <Trigger Property="Button.IsPressed" Value="True">
+                    <Setter Property="Control.Foreground" Value="Red" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="Stil1" BasedOn="{StaticResource Trigger2}">
+            <Setter Property="Control.Foreground" Value="White" />
+            <Setter Property="Control.Background" Value="Black" />
+        </Style>
+        <!--Rotire butoane-->
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"></Setter>
+            <Setter Property="Padding" Value="20,15"></Setter>
+            <Setter Property="Margin" Value="2"></Setter>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <RotateTransform></RotateTransform>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Button.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard Name="rotateStoryboardBegin">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle"
+                 To="360" Duration="0:0:0.8" RepeatBehavior="Forever"></DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle"
+                   Duration="0:0:0.2"></DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <StackPanel Margin="5" Button.Click="ButtonClick">
+            <Button  Margin="5" Style="{StaticResource Trigger2}" >TicTacToe</Button>
+            <Button >Calculator</Button>
+            <Button  Style="{StaticResource Trigger1}" >Note</Button>
+            <Button>Pen</Button>
+            <Button  Style="{StaticResource Stil1}" >DragAndDrop</Button>
+            <Button >Play</Button>
+            <Button Foreground="Green" Background="Yellow" Style="{StaticResource Trigger2}" >Drawing</Button>
+        </StackPanel>
+    </Grid>
+</Window>

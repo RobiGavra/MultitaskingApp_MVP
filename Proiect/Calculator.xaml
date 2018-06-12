@@ -1,0 +1,148 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proiect"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Proiect.Calculator"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Calculator" Height="380.233" Width="500.127">
+    <Grid>
+        <ToolBarTray Grid.Row="1">
+            <ToolBar>
+                <Button Command="Cut">Cut</Button>
+                <Button Command="Copy">Copy</Button>
+                <Button Command="Paste">Paste</Button>
+            </ToolBar>
+            <ToolBar>
+                <Button Command="Undo">Undo</Button>
+            </ToolBar>
+        </ToolBarTray>
+        <Button x:Name="seven" Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="11,106,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="seven_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+        <Button x:Name="eight" Content="8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="66,106,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="eight_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="nine" Content="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="121,106,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="nine_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="four" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="11,161,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="four_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="five" Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="66,161,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="five_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="six" Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="121,161,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="six_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="one" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="11,216,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="one_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="two" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="66,216,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="two_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="three" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="121,216,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="three_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="zero" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="11,271,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="zero_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="point" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="66,271,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="point_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="clear" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="121,271,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="clear_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="lPar" Content="(" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="196,106,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="lPar_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="rPar" Content=")" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="251,106,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="rPar_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="sum" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="196,161,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="sum_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="minus" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="251,161,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="minus_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="mult" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="196,216,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="mult_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="divide" Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="251,216,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="divide_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="equal" Content="=" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Margin="196,271,0,0" Height="50" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="equal_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="back"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="251,32,0,0" Height="69" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="back_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image Source="back.png" Height="59" Width="50" RenderTransformOrigin="0.59,0.496"/>
+        </Button>
+
+        
+        <TextBox x:Name="screen"  HorizontalAlignment="Left" Height="69" Margin="10,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" AcceptsReturn="True"/>
+        <TextBox x:Name="screen2"  HorizontalAlignment="Left" Height="179" Margin="325,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" AcceptsReturn="True"/>
+        <Button x:Name="save" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="325,211,0,0" Height="33" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="save_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="open" Content="Open" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="325,249,0,0" Height="39" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="open_Click"  >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Notes" HorizontalAlignment="Left" Margin="325,1,0,0" VerticalAlignment="Top" Width="42"/>
+        <Button x:Name="clean" Content="Clean" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="325,293,0,0" Height="39" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="White" RenderTransformOrigin="0.447,-0.142" Click="clean_Click"  >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+
+
+    </Grid>
+</Window>

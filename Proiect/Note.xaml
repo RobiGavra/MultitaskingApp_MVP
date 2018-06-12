@@ -1,0 +1,33 @@
+﻿<Window x:Class="Proiect.Note"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proiect"
+        mc:Ignorable="d"
+        Title="Note" Height="244.737" Width="511.005">
+    <Grid>
+        <TextBox  x:Name="Box"
+           FontFamily="{Binding ElementName=lstFonts, Path=SelectedItem}"
+           TextAlignment="Left" TextWrapping="Wrap" Margin="10,10,140.8,90.2"
+           Foreground="{Binding ElementName=lstColors, Path=SelectedItem.Tag}"
+           FontSize="{Binding ElementName=sliderFontSize, Path=Value}">
+            Lorem ipsum dolor sit amet, ridens delicatissimi id vim, in mea inani electram, solum consul aeterno eu eos. Choro detracto vis eu, iriure senserit salutatus ei has, nec nonumy omnesque copiosae et. In vix praesent repudiare. Mei stet dicam eripuit ei, te sed epicuri elaboraret. Vim omnes tamquam te, pri ei case signiferumque.
+        </TextBox>
+
+        <ListBox Margin="369,111,9.8,10.2" Name="lstColors">
+            <ListBoxItem Tag="Blue">Blue</ListBoxItem>
+            <ListBoxItem Tag="Red">Red</ListBoxItem>
+            <ListBoxItem Tag="Yellow">Yellow</ListBoxItem>
+            <ListBoxItem Tag="Green">Green</ListBoxItem>
+            <ListBoxItem Tag="Lime">Lime</ListBoxItem>
+        </ListBox>
+        <Slider Name="sliderFontSize" Margin="10,130,185.8,48.2" Minimum="1" Maximum="40" Value="10" TickFrequency="0.5" IsSnapToTickEnabled="True" TickPlacement="TopLeft"></Slider>
+        <ListBox Grid.Row="0" ItemsSource="{x:Static Fonts.SystemFontFamilies}" Margin="369,10,9.8,109.2" Name="lstFonts"/>
+        <TextBox IsReadOnly="True" HorizontalAlignment="Left" Height="18" Margin="324,139,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="40" Text="{Binding ElementName=Box, Path=FontSize, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Delay=500}" RenderTransformOrigin="0.455,1.229" />
+        <Button x:Name="Open" Content="Open" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" Width="115" Click="Open_Click"/>
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Margin="130,177,0,0" VerticalAlignment="Top" Width="115" Click="Save_Click" />
+        <Button x:Name="Clear" Content="Clear" HorizontalAlignment="Left" Margin="249,177,0,0" VerticalAlignment="Top" Width="115" Click="Clear_Click"/>
+
+    </Grid>
+</Window>
